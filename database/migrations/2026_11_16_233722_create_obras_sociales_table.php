@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('obras_sociales', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 120) -> unique();
-            $table->string('sigla', 20);
-            $table->boolean('activo') -> default(true);
+            $table->string('sigla', 20)->nullable();
+            $table->boolean('activa') -> default(true);
         });
     }
 

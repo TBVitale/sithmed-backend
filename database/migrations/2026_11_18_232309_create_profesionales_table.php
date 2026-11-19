@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('profesionales', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usuario_id')->constrained('usuarios')->unique();
+            $table->foreignId('usuario_id')->unique()->constrained('usuarios');
             $table->string('tipo_matricula', 2);
             $table->string('jurisdiccion', 40)->default('NACIONAL');
-            $table->string('matricula', 20) -> unique();
-            $table->string('especialidad', 100);
+            $table->string('matricula', 10);
+            $table->string('especialidad', 100)->nullable();
             $table->timestamps();
         });
     }
